@@ -1,6 +1,6 @@
 part of feather;
 
 class Context {
-    Canvas canvas;
-    Context(this.canvas);
+  Canvas canvas;
+  Context(this.canvas);
 }

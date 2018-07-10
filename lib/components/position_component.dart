@@ -1,41 +1,41 @@
 part of feather;
 
 class PositionComponent extends Component {
-    double x, y;
-    PositionComponent({this.x, this.y});
+  double x, y;
+  PositionComponent({this.x, this.y});
 
-    @override
-    void init() {
+  @override
+  void init() {
     // TODO: implement init
-    }
+  }
 
-    @override
-    void destroy() {
+  @override
+  void destroy() {
     // TODO: implement destroy
-    }
+  }
 
-    @override
-    void load() {
+  @override
+  void load() {
     // TODO: implement load
-    }
+  }
 
-    @override
-    void unload() {
+  @override
+  void unload() {
     // TODO: implement unload
-    }
+  }
 
-    @override
-    void input(Event event) {
+  @override
+  void input(Event event) {
     // TODO: implement input
-    }
+  }
 
-    @override
-    void update(Time time) {
+  @override
+  void update(Time time) {
     // TODO: implement update
-    }
+  }
 
-    @override
-    void render(Context context) {
+  @override
+  void render(Context context) {
     // TODO: implement render
-    }
+  }
 }

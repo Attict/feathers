@@ -1,87 +1,99 @@
 part of feather;
 
 class Quill {
-    Feather feather;
-    List<Component> components;
+  Feather feather;
+  List<Component> components;
 
-    Quill() {
-        components = new List<Component>();     
-    }
-    
-    void init() {
-        for (Component component in components) {
-            component.init();
-        }
-    }
+  Quill() {
+    components = new List<Component>();
+  }
 
-    void destroy() {
-        for (Component component in components) {
-            component.destroy();
-        }
-        components = null;
+  void init() {
+    for (Component component in components) {
+      component.init();
     }
+  }
 
-    void load() {
-        for (Component component in components) {
-            component.load();
-        }
+  void destroy() {
+    for (Component component in components) {
+      component.destroy();
     }
+    components = null;
+  }
 
-    void unload() {
-        for (Component component in components) {
-            component.unload();
-        }
+  void load() {
+    for (Component component in components) {
+      component.load();
     }
+  }
 
-    void input(Event event) {
-        for (Component component in components) {
-            component.input(event);
-        }
+  void unload() {
+    for (Component component in components) {
+      component.unload();
     }
+  }
 
-    void update(Time time) {
-        for (Component component in components) {
-            component.update(time);
-        }
+  void input(Event event) {
+    for (Component component in components) {
+      component.input(event);
     }
+  }
 
-    void render(Context context) {
-        for (Component component in components) {
-            component.render(context);
-        }
+  void update(Time time) {
+    for (Component component in components) {
+      component.update(time);
     }
+  }
 
-    void addComponent<T extends Component>(T component) {
-        Component c = getComponent<T>();
-        if (c != null) {
-            print('FEATHER: Component ${T.toString()} already exists on this Quill!');
-            return;
-        }
-        component.setQuill(this);
-        components.add(component);
+  void render(Context context) {
+    for (Component component in components) {
+      component.render(context);
     }
+  }
 
-    void removeComponent<T extends Component>() {
-        Component component = getComponent<T>();
-        if (component == null) {
-            print('FEATHER: Component ${T.toString()} does not exists on this Quill!');
-            return;
-        }
-        // component.unload();
-        component.destroy();
-        components.remove(component);
+  T addComponent<T extends Component>(T component) {
+    Component c = getComponent<T>();
+    if (c != null) {
+      print('FEATHER: Component ${T.toString()} already exists on this Quill!');
+      return c;
     }
+    component.setQuill(this);
+    components.add(component);
+    return component;
+  }
 
-    Component getComponent<T extends Component>() {
-        for (Component component in components) {
-            if (component is T) {
-                return component;
-            }
-        }
-        return null;
+  T removeComponent<T extends Component>() {
+    Component component = getComponent<T>();
+    if (component == null) {
+      print(
+          'FEATHER: Component ${T.toString()} does not exists on this Quill!');
+      return null;
     }
+    // component.unload();
+    component.destroy();
+    components.remove(component);
+    return component;
+  }
 
-    void setFeather(Feather feather) {
-        this.feather = feather;
+  bool hasComponent<T extends Component>() {
+    for (Component component in components) {
+      if (component is T) {
+        return true;
+      }
     }
+    return false;
+  }
+
+  T getComponent<T extends Component>() {
+    for (Component component in components) {
+      if (component is T) {
+        return component;
+      }
+    }
+    return null;
+  }
+
+  void setFeather(Feather feather) {
+    this.feather = feather;
+  }
 }

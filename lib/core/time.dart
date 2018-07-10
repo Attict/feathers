@@ -4,21 +4,21 @@ part of feather;
 /// total time, and other things
 
 class Time {
-    Duration duration;
+  Duration duration;
 
-    Time(this.duration);
+  Time(this.duration);
 
-    static Duration fromSeconds(double seconds) {
-        /// TODO: Calculate the microseconds from seconds
-        int mseconds = seconds.ceil();
-        return new Duration(microseconds: mseconds);
-    }
+  static Duration fromSeconds(double seconds) {
+    /// TODO: Calculate the microseconds from seconds
+    int mseconds = seconds.ceil();
+    return new Duration(microseconds: mseconds);
+  }
 
-    double totalSeconds() {
-        return duration.inMilliseconds * 1000.0;
-    }
+  double totalSeconds() {
+    return duration.inMilliseconds * 1000.0;
+  }
 
-    double elapsedSeconds() {
-        return duration.inMicroseconds / -Duration.MICROSECONDS_PER_SECOND;
-    }
+  double elapsedSeconds() {
+    return duration.inMicroseconds / -Duration.MICROSECONDS_PER_SECOND;
+  }
 }
