@@ -8,6 +8,31 @@ A Flutter package for creating flexible, and light mobile apps and games!  _More
 
 Feather uses a _node_ based approach to everything.  Everything is a feather (node), every feather has a quill (set of components).  Quills may be predefined, such as the `SpriteQuill`, or you can customize them to contain only the `Components` you really want!  _This documentation is lacking, but will be updated as soon as possible..._
 
+## Quick Start
+
+First we can create a feather
+
+`this.addFeather('user_sprite', new Feather());`
+
+Then we can add a couple components for functionality to our feather
+
+```
+Feather user = this.getFeather('user_sprite');
+user.addComponent<PositionComponent>(new PositionComponent(x: 25.0, y: 25.0));
+user.addComponent<SizeComponent>(new SizeComponent(width: 50.0, height: 100.0));
+user.addComponent<TextureComponent>(new TextureComponent(new Texture('user.png'));
+```
+
+Alternatively we can use a preset quill, such as the sprite quill for this:
+
+```
+Feather user = this.getFeather('user_sprite');
+user.setQuill<SpriteQuill>()
+  ..setPosition(x: 25.0, y: 25.0)
+  ..setSize(width: 50.0, height: 100.0)
+  ..initWithTexture(new Texture('user.png');
+```
+
 ## Usage
 
 _Example coming soon..._
