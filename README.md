@@ -1,10 +1,10 @@
-# Feather
+# Feathers
 
 A Flutter package for creating flexible, and light mobile apps and games!  _More info coming soon..._
 
-**Feather is still in an (early) alpha-beta release**
+**Feather is still in an (early) development release**
 
-## Feathers
+## Feathering Your App
 
 Feather uses a _node_ based approach to everything.  Everything is a feather (node), every feather has a quill (set of components).  Quills may be predefined, such as the `SpriteQuill`, or you can customize them to contain only the `Components` you really want!  _This documentation is lacking, but will be updated as soon as possible..._
 
@@ -14,7 +14,7 @@ _Example coming soon..._
 
 **lib/main.dart**
 ```
-import 'package:feathers/engine.dart';
+import 'package:feathers/feathers.dart';
 
 import './my_game.dart';
 
@@ -26,7 +26,7 @@ void main() async {
 
 **lib/my_game.dart**
 ```
-import 'package:feathers/engine.dart';
+import 'package:feathers/feathers.dart';
 
 class MyGame extends Feather {
 
@@ -107,3 +107,7 @@ The main loop consists of these methods:
 When you create/add a feather, you can also directly access the feather.
 
 E.g. `Feather myFeather = createFeather('my_feather');`
+
+## Contributing
+
+_Coming soon..._
