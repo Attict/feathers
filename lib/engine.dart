@@ -1,4 +1,4 @@
-library feather;
+library feathers;
 
 import 'dart:math';
 import 'dart:typed_data';

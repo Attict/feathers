@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 /// Timer class
 class Timer {

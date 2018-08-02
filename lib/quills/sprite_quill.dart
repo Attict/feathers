@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 class SpriteQuill extends Quill {
   double x, y, width, height;

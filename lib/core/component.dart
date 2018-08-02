@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 abstract class Component {
   Quill quill;

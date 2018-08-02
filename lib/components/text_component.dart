@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 enum TextOptions {
   DIRECTION_LTR,

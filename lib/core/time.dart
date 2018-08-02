@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 /// This is the game time, that will give up elapsed seconds,
 /// total time, and other things

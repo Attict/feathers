@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 class PositionComponent extends Component {
   double x, y;

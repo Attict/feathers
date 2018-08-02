@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 /// Things to do with this component:
 /// ...add color support

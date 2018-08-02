@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 class Feather {
   bool enabled = true;

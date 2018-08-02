@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 class ColorComponent extends Component {
   Paint paint;

@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 class AnimationComponent extends Component {
   Map<String, Animation> animations;

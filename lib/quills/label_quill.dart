@@ -1,3 +1,3 @@
-part of feather;
+part of feathers;
 
 class LabelQuill extends Quill {}

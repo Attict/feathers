@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 /// Does the manager component only allow for 1 active feather at a time?
 /// perhaps have a separate component for multiple active feathers

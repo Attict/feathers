@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 /// Event Types
 /// Eventually we will have swipe, and double tap,

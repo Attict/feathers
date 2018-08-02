@@ -1,4 +1,4 @@
-part of feather;
+part of feathers;
 
 /// Animation vs Tweening
 /// [?] Should these names be changed?
