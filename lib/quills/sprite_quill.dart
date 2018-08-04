@@ -3,7 +3,7 @@ part of feathers;
 class SpriteQuill extends Quill {
   double x, y, width, height;
 
-  SpriteQuill({this.x, this.y, this.width, this.height}) : super();
+  SpriteQuill() : super();
 
   @override
   void init() {

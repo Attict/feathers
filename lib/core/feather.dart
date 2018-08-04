@@ -90,7 +90,7 @@ class Feather {
     return quill.getComponent<T>();
   }
 
-  T getQuill<T extends Quill>() {
+  Quill getQuill() {
     return this.quill;
   }
 

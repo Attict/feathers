@@ -1,6 +1,6 @@
 name: feathers
-description: A lightweight game engine, that keeps your game simple by uses only feathers!
-version: 0.0.2-beta.1
+description: A lightweight game engine, that keeps your game simple by only using feathers!
+version: 0.0.2
 author: Attict <eric@attict.net>
 homepage: https://github.com/Attict/Feather
 

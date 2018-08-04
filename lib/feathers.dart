@@ -39,10 +39,14 @@ class FeatherEngine {
   FeatherEngine();
 
   void initialize(Feather game) {
+    // Set the screen size
+    Context.screen = (window.physicalSize / window.devicePixelRatio);
+
     // game.size = window.physicalSize / window.devicePixelRatio;
     this.game = game;
     game.init();
     inputTimer = new Timer(0.025);
+
 
     /// [?] Does this need moved?
     game.load();
