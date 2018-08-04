@@ -19,6 +19,6 @@ class Time {
   }
 
   double elapsedSeconds() {
-    return duration.inMicroseconds / Duration.microsecondsPerSecond;
+    return (duration.inMicroseconds / Duration.microsecondsPerSecond).abs();
   }
 }

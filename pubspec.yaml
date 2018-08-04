@@ -1,5 +1,5 @@
 name: feathers
-description: Lightweight flexible app & game engine where you get to feather your application the way you want it, using a node based approach with components that can be customized.
+description: A lightweight game engine, that only uses feathers.
 version: 0.0.2-dev.1
 author: Attict <eric@attict.net>
 homepage: https://github.com/Attict/Feather

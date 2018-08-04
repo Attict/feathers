@@ -94,9 +94,10 @@ class Feather {
     return this.quill;
   }
 
-  void setQuill(Quill quill) {
+  Quill setQuill(Quill quill) {
     quill.setFeather(this);
     this.quill = quill;
+    return this.quill;
   }
 
   /// Manage Sub-Feathers of this feather:
