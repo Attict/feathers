@@ -27,6 +27,7 @@ class SpriteQuill extends Quill {
     super.update(time);
   }
 
+  /// Init using the colorComponent
   void initWithColor(Color color) {
     if (hasComponent<ColorComponent>()) {
       print(
@@ -36,6 +37,8 @@ class SpriteQuill extends Quill {
     addComponent<ColorComponent>(new ColorComponent(color));
   }
 
+
+  /// Init using the textureComponent
   void initWithTexture(Texture texture, {Rect source}) {
     if (hasComponent<TextureComponent>()) {
       print(
@@ -49,6 +52,7 @@ class SpriteQuill extends Quill {
         new TextureComponent(texture, source: source));
   }
 
+  /// Init using the animationComponent
   void initWithAnimation(Animation animation) {
     AnimationComponent animationComponent = new AnimationComponent()
       ..addAnimation('main', animation);

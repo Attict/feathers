@@ -90,11 +90,11 @@ class Feather {
     return quill.getComponent<T>();
   }
 
-  Quill getQuill() {
+  T getQuill<T extends Quill>() {
     return this.quill;
   }
 
-  Quill setQuill(Quill quill) {
+  T setQuill<T extends Quill>(T quill) {
     quill.setFeather(this);
     this.quill = quill;
     return this.quill;
