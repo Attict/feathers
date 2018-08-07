@@ -4,7 +4,9 @@ A lightweight game engine, that only uses feathers.
 
 ## Why Feathers?
 
-The idea of feathers is to give you full control over your
+The idea of feathers is to give you full control over your app.  By allowing you 
+to create the components you want, for the feathers you design.  All you need to 
+know, is a feather!
 
 ## Quick Start
 
@@ -125,4 +127,7 @@ your code maintainable.  _Future versions plan to remove adding access to constr
 
 ## Contributing
 
-_Coming soon..._
+I hope that one day there will be a community of components and quills to help new users 
+streamline their app development.
+
+_More Coming soon..._
