@@ -5,7 +5,7 @@ A lightweight game engine, that only uses feathers.
 ## Quick Start
 
 **lib/main.dart**
-```
+```dart
 import 'package:feathers/feathers.dart';
 import 'dart:ui'
 
@@ -59,7 +59,7 @@ the `Component` class, then implement the methods appropriatly (found above in t
 _Feather Loops_ section.   It is up to you to determine how you want your component 
 to handle everything!  See example below:
 
-```
+```dart
 class CustomComponent extends Component {
   @override
   void init() {
@@ -94,7 +94,7 @@ core loop functionality, since this is already handled for you.  The main focus 
 custom quill is to add whichever components  you wish to have combined into one component
 set.  See example below:
 
-```
+```dart
 class ColoredSquareQuill extends Quill {
   void initWithColor(Color color) {
     addComponent<PositionComponent>(new PositionComponent())
