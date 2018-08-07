@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:flutter/services.dart' show rootBundle;
 
 part 'core/animation.dart';
+part 'core/audio.dart';
 part 'core/component.dart';
 part 'core/context.dart';
 part 'core/event.dart';
@@ -16,16 +17,18 @@ part 'core/texture.dart';
 part 'core/time.dart';
 part 'core/timer.dart';
 
+part 'components/action_component.dart';
 part 'components/animation_component.dart';
 part 'components/color_component.dart';
 part 'components/input_component.dart';
 part 'components/manager_component.dart';
 part 'components/position_component.dart';
 part 'components/size_component.dart';
+part 'components/sound_component.dart';
 part 'components/text_component.dart';
 part 'components/texture_component.dart';
-part 'components/tween_component.dart';
 
+part 'quills/camera_quill.dart';
 part 'quills/label_quill.dart';
 part 'quills/sprite_quill.dart';
 

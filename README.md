@@ -2,6 +2,10 @@
 
 A lightweight game engine, that only uses feathers.
 
+## Why Feathers?
+
+The idea of feathers is to give you full control over your
+
 ## Quick Start
 
 **lib/main.dart**
@@ -33,9 +37,10 @@ class User extends Feather {
   }
 }
 ```
-## Feather Loops
+## The Feather Loop
 
-The main loop consists of these methods:
+Each feather, and all associated components follow a main way of looping. 
+Primarily through the **input, update, and render** methods.
 
 `init`: Initializes the feather/component.
 
