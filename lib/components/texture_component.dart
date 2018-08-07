@@ -8,14 +8,6 @@ class TextureComponent extends Component {
   Rect source;
   Texture texture;
 
-  TextureComponent(this.texture, {this.source}) {
-    if (source == null) {
-      source = Rect.fromLTWH(0.0, 0.0, 50.0, 50.0);
-
-      /// TODO: Make this the size of the image
-    }
-  }
-
   @override
   void init() {}
 
@@ -42,14 +34,7 @@ class TextureComponent extends Component {
       PositionComponent position = quill.getComponent<PositionComponent>();
       SizeComponent size = quill.getComponent<SizeComponent>();
 
-      if (position == null || size == null) {
-        print(
-            "FEATHER: The TextureComponent requires the PositionComponent and SizeComponent!");
-        position = new PositionComponent(x: 0.0, y: 0.0);
-        size = new SizeComponent(
-            width: 50.0,
-            height: 50.0); // TODO: Fixme to be the size of the image
-      }
+      /// TODO: Add getComponent to return 0,0
 
       var destination =
           new Rect.fromLTWH(position.x, position.y, size.width, size.height);
@@ -57,5 +42,13 @@ class TextureComponent extends Component {
 
       context.canvas.drawImageRect(texture.image, source, destination, paint);
     }
+  }
+
+  void setSource(Rect source) {
+    this.source = source;
+  }
+
+  void setTexture(Texture texture) {
+    this.texture = texture;
   }
 }

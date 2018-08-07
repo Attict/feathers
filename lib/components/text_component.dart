@@ -17,8 +17,6 @@ class TextComponent extends Component {
   TextStyle textStyle;
   String text;
 
-  TextComponent(this.text);
-
   @override
   void init() {
     final TextStyle style =
@@ -46,10 +44,6 @@ class TextComponent extends Component {
   @override
   void render(Context context) {
     PositionComponent position = quill.getComponent<PositionComponent>();
-    if (position == null) {
-      print("FEATHER: The PositionComponent is not set!");
-      position = new PositionComponent(x: 0.0, y: 0.0);
-    }
     context.canvas
         .drawParagraph(this.paragraph, new Offset(position.x, position.y));
   }
@@ -76,5 +70,9 @@ class TextComponent extends Component {
           ..addText(text);
 
     paragraph = builder.build()..layout(constraints);
+  }
+
+  void setText(String text) {
+    this.text = text;
   }
 }

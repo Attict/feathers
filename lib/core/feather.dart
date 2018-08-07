@@ -103,9 +103,8 @@ class Feather {
   /// Manage Sub-Feathers of this feather:
   /// add, remove, get, set, list
 
-  Feather createFeather(String name, {Quill quill}) {
-    Feather feather = (quill != null) ? new Feather(quill) : new Feather();
-    return addFeather(name, feather);
+  Feather createFeather(String name) {
+    return addFeather(name, new Feather());
   }
 
   Feather addFeather(String name, Feather feather) {

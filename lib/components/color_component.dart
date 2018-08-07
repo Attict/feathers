@@ -3,12 +3,10 @@ part of feathers;
 class ColorComponent extends Component {
   Paint paint;
 
-  ColorComponent(Color color) {
-    paint = new Paint()..color = color;
-  }
-
   @override
-  void init() {}
+  void init() {
+    paint = new Paint();
+  }
 
   @override
   void destroy() {}
@@ -27,17 +25,15 @@ class ColorComponent extends Component {
 
   @override
   void render(Context context) {
-    PositionComponent position = (hasComponent<PositionComponent>())
-        ? getComponent<PositionComponent>()
-        : addComponent<PositionComponent>(
-            new PositionComponent(x: 0.0, y: 0.0));
-    SizeComponent size = (hasComponent<PositionComponent>())
-        ? getComponent<SizeComponent>()
-        : addComponent<SizeComponent>(
-            new SizeComponent(width: 50.0, height: 50.0));
+    PositionComponent position = getComponent<PositionComponent>();
+    SizeComponent size = getComponent<SizeComponent>();
 
     Rect rect =
         new Rect.fromLTWH(position.x, position.y, size.width, size.height);
     context.canvas.drawRect(rect, paint);
+  }
+
+  void setColor(Color color) {
+    this.paint.color = color;
   }
 }

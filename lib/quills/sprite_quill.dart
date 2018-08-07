@@ -1,55 +1,24 @@
 part of feathers;
 
 class SpriteQuill extends Quill {
-  double x, y, width, height;
-
-  SpriteQuill() : super();
-
   @override
   void init() {
-    addComponent<PositionComponent>(new PositionComponent(x: x, y: y));
-    addComponent<SizeComponent>(
-        new SizeComponent(width: width, height: height));
-
     super.init();
-  }
-
-  @override
-  void update(Time time) {
-    PositionComponent position = getComponent<PositionComponent>();
-    SizeComponent size = getComponent<SizeComponent>();
-
-    position.x = this.x;
-    position.y = this.y;
-    size.width = this.width;
-    size.height = this.height;
-
-    super.update(time);
   }
 
   /// Init using the colorComponent
   void initWithColor(Color color) {
-    if (hasComponent<ColorComponent>()) {
-      print(
-          'FEATHER: The TextureComponent on this quill has already been set!');
-      return;
-    }
-    addComponent<ColorComponent>(new ColorComponent(color));
+    addComponent<ColorComponent>(new ColorComponent()..setColor(color));
   }
-
 
   /// Init using the textureComponent
   void initWithTexture(Texture texture, {Rect source}) {
-    if (hasComponent<TextureComponent>()) {
-      print(
-          'FEATHER: The TextureComponent on this quill has already been set!');
-      return;
+    final textureComponent =
+        addComponent<TextureComponent>(new TextureComponent())
+          ..setTexture(texture);
+    if (source != null) {
+      textureComponent.setSource(source);
     }
-    if (source == null) {
-      source = Rect.fromLTWH(0.0, 0.0, width, height);
-    }
-    addComponent<TextureComponent>(
-        new TextureComponent(texture, source: source));
   }
 
   /// Init using the animationComponent
@@ -59,17 +28,31 @@ class SpriteQuill extends Quill {
     addComponent<AnimationComponent>(animationComponent);
   }
 
+  /// TODO:
+  /// Initialize with a list of animation, setting
+  /// the [0] index as current
   void initWithAnimations(List<Animation> animations) {}
 
+  /// Set the position
   void setPosition(double x, double y) {
-    this.x = x;
-    this.y = y;
+    if (!hasComponent<PositionComponent>()) {
+      addComponent<PositionComponent>(new PositionComponent());
+    }
+    getComponent<PositionComponent>()..setPosition(x, y);
   }
 
+  /// Set the size
   void setSize(double width, double height) {
-    this.width = width;
-    this.height = height;
+    if (!hasComponent<SizeComponent>()) {
+      addComponent<SizeComponent>(new SizeComponent());
+    }
+    getComponent<SizeComponent>()..setSize(width, height);
+    //..setSize(width, height);
   }
 
+  /// Set the current animation
+  void setAnimation() {}
+
+  /// Add an event to the sprite?
   void addEvent(Event event, Function callback) {}
 }

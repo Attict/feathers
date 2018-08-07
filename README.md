@@ -25,7 +25,7 @@ class MyGame extends Feather {
 class User extends Feather {
   @override
   void init() {
-    (this.setQuill(new SpriteQuill()) as SpriteQuill) 
+    this.setQuill<SpriteQuill>(new SpriteQuill())
       ..setSize(50.0, 150.0)
       ..setPosition(25.0, 50.0)
       ..initWithColor(0xFFFF0000);

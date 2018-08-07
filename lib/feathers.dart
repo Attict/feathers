@@ -29,17 +29,28 @@ part 'components/tween_component.dart';
 part 'quills/label_quill.dart';
 part 'quills/sprite_quill.dart';
 
+/// This is where the game engine initializes from the main
+/// function call
 class FeatherEngine {
+  /// The game iteself is just a feather
   Feather game;
+
+  /// Last update used for calculating the delta time
   Duration lastUpdate;
+
+  /// Time is our delta time
   Time time;
 
+  /// Input timer delays input so that input
+  /// has a chance to get called, rather than overriding each
   Timer inputTimer;
 
   FeatherEngine();
 
-  void initialize(Feather game) {
-    // Set the screen size
+  /// Initializes the entire app in this call
+  /// this is where everything starts.
+  void initialize(Feather game) async {
+    /// Set the screen size
     Context.screen = (window.physicalSize / window.devicePixelRatio);
 
     // game.size = window.physicalSize / window.devicePixelRatio;
@@ -47,18 +58,20 @@ class FeatherEngine {
     game.init();
     inputTimer = new Timer(0.025);
 
-
     /// [?] Does this need moved?
-    game.load();
+    await game.load();
 
+    /// Handle input
     window.onPointerDataPacket = this.handleInput;
+
+    /// Begin rendering
     window.onBeginFrame = this.run;
     window.scheduleFrame();
   }
 
+  /// The application loop
   void run(Duration timeStamp) {
-    final Rect paintBounds =
-        Offset.zero & (window.physicalSize / window.devicePixelRatio);
+    final Rect paintBounds = Offset.zero & Context.screen;
     final PictureRecorder recorder = new PictureRecorder();
     final Canvas canvas = new Canvas(recorder, paintBounds);
     //canvas.translate(paintBounds.width / 2.0, paintBounds.height / 2.0);

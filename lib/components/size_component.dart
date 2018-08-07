@@ -3,8 +3,6 @@ part of feathers;
 class SizeComponent extends Component {
   double width, height;
 
-  SizeComponent({this.width, this.height});
-
   @override
   void init() {
     // TODO: implement init
@@ -38,5 +36,10 @@ class SizeComponent extends Component {
   @override
   void render(Context context) {
     // TODO: implement render
+  }
+
+  void setSize(double width, double height) {
+    this.width = width;
+    this.height = height;
   }
 }

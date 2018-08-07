@@ -50,11 +50,14 @@ class SplashScene extends Feather {
     void init() {
         /// This demonstrates using a feather without a preset `Quill`
         /// alternatively we could use the `SpriteQuill` to define our splash_image
-        createFeather('splash_image')
-            ..addComponent<SizeComponent>(new SizeComponent(width: 150.0, height: 150.0))
-            ..addComponent<PositionComponent>(new PositionComponent(x: 100.0, y: 225.0))
-            ..addComponent<TextureComponent>(new TextureComponent(new Texture('splash.png'), 
-                        source: Rect.fromLTWH(0.0, 0.0, 350.0, 351.0)));
+        Feather splashImage = createFeather('splash_image');
+        splashImage.addComponent<SizeComponent>(new SizeComponent())
+            ..setSize(150.0, 150.0);
+        splashImage.addComponent<PositionComponent>(new PositionComponent())
+            ..setPosition(100.0, 225.0);
+        splashImage.addComponent<TextureComponent>(new TextureComponent()) 
+            ..setTexture(new Texture('splash.png'))
+            ..setSource(Rect.fromLTWH(0.0, 0.0, 350.0, 351.0));
 
         super.init();
     }
@@ -65,21 +68,19 @@ class MyScene extends Feather {
     @override
     void init() {
         /// Give this scene a rectangle size from (0.0, 0.0) to (380.0, 700.0)
-        this
-            ..addComponent<PositionComponent>(new PositionComponent(x: 0.0, y: 0.0))
-            ..addComponent<SizeComponent>(new SizeComponent(width: 380.0, height: 700.0));
+        addComponent<PositionComponent>(new PositionComponent())
+            ..setPosition(0.0, 0.0);
+        addComponent<SizeComponent>(new SizeComponent())
+            ..setSize(380.0, 700.0);
 
         InputComponent input = this.addComponent<InputComponent>(new InputComponent());
         input.addEvent(new Event(EventType.TOUCHDOWN), () {
             direction = Random().nextInt(3);
         });
 
-        this.createFeather('user', quill: new SpriteQuill(
-            x: 25.0,
-            y: 25.0,
-            width: 50.0,
-            height: 50.0
-        )).getQuill<SpriteQuill>()
+        this.createFeather('user').setQuill<SpriteQuill>(new SpriteQuill())
+            ..setSize(50.0, 50.0)
+            ..setPosition(25.0, 25.0)
             ..initWithColor(const Color(0xFF00FF00));
 
         super.init();
