@@ -49,7 +49,7 @@ class FeatherEngine {
 
   /// Initializes the entire app in this call
   /// this is where everything starts.
-  void initialize(Feather game) async {
+  void initialize(Feather game) {
     /// Set the screen size
     Context.screen = (window.physicalSize / window.devicePixelRatio);
 
@@ -59,7 +59,7 @@ class FeatherEngine {
     inputTimer = new Timer(0.025);
 
     /// [?] Does this need moved?
-    await game.load();
+    game.load();
 
     /// Handle input
     window.onPointerDataPacket = this.handleInput;
