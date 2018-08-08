@@ -27,6 +27,7 @@ part 'components/size_component.dart';
 part 'components/sound_component.dart';
 part 'components/text_component.dart';
 part 'components/texture_component.dart';
+part 'components/timer_component.dart';
 
 part 'quills/camera_quill.dart';
 part 'quills/label_quill.dart';

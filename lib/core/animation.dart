@@ -1,11 +1,25 @@
 part of feathers;
 
+/// All animation options are set in this enum
+/// such as how the animation will act.
+/// [Teeter] animation will go from start to end to start
+/// [Repeat] will go from start to end, repeating
+/// TODO: More options, or refactor
 enum AnimationOptions { TEETER, REPEAT }
 
 class Animation {
+  /// The texture for the animation
   Texture texture;
+
+  /// The frames inside of the animation in order
   List<AnimationFrame> frames;
+
+  /// How far into the animation
   double timeIntoAnimation;
+
+  /// Presets options, to be loaded after initialiation
+  /// These are used to avoid problems with setting these options
+  /// prior to actually being loaded in the [load] method
   Map<String, dynamic> presets;
 
   Animation(this.texture) {

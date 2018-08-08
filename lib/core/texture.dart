@@ -1,9 +1,17 @@
 part of feathers;
 
 class Texture {
+  /// Make sure the file name is also included inside of the
+  /// pubspec.yaml file
   String filename;
+
+  /// The image itself
   Image image;
+
+  /// Create the texture by filename
   Texture(this.filename);
+
+  /// Loads the texture during [load]
   Future<Null> load() async {
     if (image == null) {
       ByteData data = await rootBundle.load('assets/images/$filename');

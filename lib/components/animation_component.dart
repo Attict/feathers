@@ -4,10 +4,6 @@ class AnimationComponent extends Component {
   Map<String, Animation> animations;
   String current;
 
-  AnimationComponent() {
-    animations = new Map<String, Animation>();
-  }
-
   @override
   void init() {}
 
@@ -49,24 +45,40 @@ class AnimationComponent extends Component {
     }
   }
 
+  /// Add animations by name to our mapped list of animations.
+  /// If the animations map is not yet allocated, create and allocate it.
+  /// The first animation to be set, is automatically set to current animation.
   void addAnimation(String name, Animation animation) {
+    /// Assert that the animations map is not null
+    if (animations == null) {
+      animations = new Map<String, Animation>();
+    }
+
+    /// Assert that this animation does not already exist
     if (animations[name] != null) {
       print('FEATHER: Animation $name already exists!');
       return;
     }
+
+    /// If current is null, set it to this animation
     if (current == null) {
       current = name;
     }
+
+    /// Finally, add the animation by name
     animations[name] = animation;
   }
 
+  /// Remove the animation from the map
   void removeAnimation(String name) {
     animations.remove(name);
   }
 
+  /// Set the current animation by name
   void setAnimation(String name) {
     current = name;
   }
 
+  /// TODO: Allow adding frames to an animation
   void addFrame(String animationName, AnimationFrame frame) {}
 }
