@@ -4,9 +4,7 @@ class ColorComponent extends Component {
   Paint paint;
 
   @override
-  void init() {
-    paint = new Paint();
-  }
+  void init() {}
 
   @override
   void destroy() {}
@@ -34,6 +32,9 @@ class ColorComponent extends Component {
   }
 
   void setColor(Color color) {
+    if (paint == null) {
+      paint = new Paint();
+    }
     this.paint.color = color;
   }
 }

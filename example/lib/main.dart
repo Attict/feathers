@@ -71,7 +71,7 @@ class MyScene extends Feather {
         addComponent<PositionComponent>(new PositionComponent())
             ..setPosition(0.0, 0.0);
         addComponent<SizeComponent>(new SizeComponent())
-            ..setSize(380.0, 700.0);
+            ..setSize(Context.screen.width, Context.screen.height);
 
         InputComponent input = this.addComponent<InputComponent>(new InputComponent());
         input.addEvent(new Event(EventType.TOUCHDOWN), () {
@@ -81,7 +81,8 @@ class MyScene extends Feather {
         this.createFeather('user').setQuill<SpriteQuill>(new SpriteQuill())
             ..setSize(50.0, 50.0)
             ..setPosition(25.0, 25.0)
-            ..initWithColor(const Color(0xFF00FF00));
+            ..initWithColor(const Color(0xFFFFFFFF));
+
 
         super.init();
     }
@@ -89,7 +90,7 @@ class MyScene extends Feather {
     @override
     void update(Time time) {
         PositionComponent position = getFeather('user').getComponent<PositionComponent>();
-        double move = 100 * time.elapsedSeconds();
+        double move = 20 * time.elapsedSeconds();
         switch (direction) {
             case 0: position.x += move; break;
             case 1: position.x -= move; break;
