@@ -1,6 +1,6 @@
 part of feathers;
 
-/// The timer class is used to cause events to be triggered 
+/// The timer class is used to cause events to be triggered
 /// when the time is up.
 
 /// This needs to be made into a component.

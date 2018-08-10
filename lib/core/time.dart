@@ -21,7 +21,7 @@ class Time {
   }
 
   /// Return our time value in elapsed seconds.  Use this
-  /// value to calculate pixels moved per second. 
+  /// value to calculate pixels moved per second.
   /// E.g. moved = pixels * elapsedSeconds;
   double elapsedSeconds() {
     return (duration.inMicroseconds / Duration.microsecondsPerSecond).abs();

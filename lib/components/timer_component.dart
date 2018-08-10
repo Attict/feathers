@@ -5,7 +5,7 @@ class TimerComponent extends Component {
 
   @override
   void init() {}
-  
+
   @override
   void destroy() {}
 

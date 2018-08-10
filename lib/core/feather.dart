@@ -9,7 +9,7 @@ part of feathers;
 /// individually.
 
 class Feather {
-  /// Enabled determines whether or not the feather is 
+  /// Enabled determines whether or not the feather is
   /// looped and rendered.
   bool enabled = true;
 
@@ -112,7 +112,7 @@ class Feather {
     quill.removeComponent<T>();
   }
 
-  /// Check whether a component exists by generic 
+  /// Check whether a component exists by generic
   /// type that extends [Component] and return [true|false]
   bool hasComponent<T extends Component>() {
     return quill.hasComponent<T>();
@@ -143,7 +143,7 @@ class Feather {
   /// [Feather] Management Below ///
   //////////////////////////////////
 
-  /// Create a feather by name only, without providing a 
+  /// Create a feather by name only, without providing a
   /// specified feather.
   Feather createFeather(String name) {
     return addFeather(name, new Feather());

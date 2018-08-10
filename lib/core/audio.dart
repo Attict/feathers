@@ -6,9 +6,8 @@ class Audio {
   /// Creates the audio track by filename
   Audio(this.filename);
 
-  /// Loads the audio track during [load] 
-  Future<Null> load() async {
-  }
+  /// Loads the audio track during [load]
+  Future<Null> load() async {}
 
   /// Starts the audio track
   void play() {}
