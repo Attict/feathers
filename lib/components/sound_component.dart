@@ -1,6 +1,8 @@
 part of feathers;
 
 class SoundComponent extends Component {
+  Map<String, Audio> sounds;
+
   @override
   void init() {}
 

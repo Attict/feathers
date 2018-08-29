@@ -4,7 +4,10 @@ import 'dart:math';
 import 'dart:typed_data';
 import 'dart:ui';
 import 'dart:async';
+
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:audioplayers/audio_cache.dart';
+
 
 part 'core/animation.dart';
 part 'core/audio.dart';
@@ -129,9 +132,6 @@ class FeatherEngine {
           game.input(event);
         }
       }
-
-      // if current
-
     }
   }
 }
