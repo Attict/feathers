@@ -1,7 +1,6 @@
 part of feathers;
 
 class Audio {
-  static AudioCache audioCache = new AudioCache(prefix: 'audio/');
 
   String filename;
 

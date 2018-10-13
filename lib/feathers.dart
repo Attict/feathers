@@ -6,8 +6,6 @@ import 'dart:ui';
 import 'dart:async';
 
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:audioplayers/audio_cache.dart';
-
 
 part 'core/animation.dart';
 part 'core/audio.dart';
