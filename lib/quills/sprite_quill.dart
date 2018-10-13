@@ -55,7 +55,12 @@ class SpriteQuill extends Quill {
   void setAnimation() {}
 
   /// Add an event to the sprite?
-  void addEvent(Event event, Function callback) {}
+  void addEvent(Event event, Function callback) {
+    if (!hasComponent<InputComponent>()) {
+      addComponent<InputComponent>(new InputComponent());
+    }
+    getComponent<InputComponent>()..addEvent(event, callback);
+  }
 
   /// Offset
   void setOffset(double x, double y, {bool scale = true}) {
