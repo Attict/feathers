@@ -50,6 +50,9 @@ class FeatherEngine {
   /// has a chance to get called, rather than overriding each
   Timer inputTimer;
 
+  /// Scale the input
+  Point inputScale;
+
   FeatherEngine();
 
   /// Initializes the entire app in this call
@@ -57,6 +60,8 @@ class FeatherEngine {
   void initialize(Feather game) {
     /// Set the screen size
     Context.screen = (window.physicalSize / window.devicePixelRatio);
+    inputScale = new Point(Context.screen.width / window.physicalSize.width,
+        Context.screen.height / window.physicalSize.height);
 
     // game.size = window.physicalSize / window.devicePixelRatio;
     this.game = game;
@@ -121,10 +126,10 @@ class FeatherEngine {
         Event event;
         if (datum.change == PointerChange.down) {
           event = new Event(EventType.TOUCHDOWN)
-            ..setPosition(datum.physicalX, datum.physicalY);
+            ..setPosition(datum.physicalX * inputScale.x, datum.physicalY * inputScale.y);
         } else if (datum.change == PointerChange.up) {
           event = new Event(EventType.TOUCHUP)
-            ..setPosition(datum.physicalX, datum.physicalY);
+            ..setPosition(datum.physicalX * inputScale.x, datum.physicalY * inputScale.y);
         }
         if (event != null) {
           game.input(event);
