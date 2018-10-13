@@ -1,7 +1,7 @@
 part of feathers;
 
 class PositionComponent extends Component {
-  double x, y;
+  double x = 0.0, y = 0.0, offsetX = 0.0, offsetY = 0.0;
 
   @override
   void init() {
@@ -39,7 +39,13 @@ class PositionComponent extends Component {
   }
 
   void setPosition(double x, double y) {
-    this.x = x;
-    this.y = y;
+    this.x = x - offsetX;
+    this.y = y - offsetY;
+  }
+
+  void setOffset(double x, double y) {
+    offsetX = x;
+    offsetY = y;
+    setPosition(this.x, this.y);
   }
 }

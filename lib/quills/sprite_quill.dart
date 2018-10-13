@@ -1,6 +1,7 @@
 part of feathers;
 
 class SpriteQuill extends Quill {
+
   @override
   void init() {
     super.init();
@@ -55,4 +56,21 @@ class SpriteQuill extends Quill {
 
   /// Add an event to the sprite?
   void addEvent(Event event, Function callback) {}
+
+  /// Offset
+  void setOffset(double x, double y, {bool scale = true}) {
+    if (!hasComponent<PositionComponent>()) {
+      addComponent<PositionComponent>(new PositionComponent());
+    }
+    final PositionComponent position = getComponent<PositionComponent>();
+    if (!scale) {
+      position.setOffset(x, y);
+    } else {
+      if (!hasComponent<SizeComponent>()) {
+        return;
+      }
+      final SizeComponent size = getComponent<SizeComponent>();
+      position.setOffset(size.width * x, size.height * y);
+    }
+  }
 }
