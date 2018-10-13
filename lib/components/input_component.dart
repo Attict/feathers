@@ -32,6 +32,8 @@ class InputComponent extends Component {
         if (position == null && size == null) {
           events[e]();
         }
+        /// This should be using the baseX and baseY, but for some reason, 
+        /// it only works with this setup.  For now skipping.
         if (position.x <= event.position.x &&
             event.position.x <= position.x + size.width &&
             position.y <= event.position.y &&

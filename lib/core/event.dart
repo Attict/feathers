@@ -16,4 +16,8 @@ class Event {
   void setPosition(double x, double y) {
     _position = new Point(x, y);
   }
+  @override
+  String toString() {
+    return '{type: ${type.toString()}, position: ${position.toString()}}';
+  }
 }

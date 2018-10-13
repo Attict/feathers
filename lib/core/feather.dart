@@ -13,6 +13,9 @@ class Feather {
   /// looped and rendered.
   bool enabled = true;
 
+  /// The parent of this Feather
+  Feather parent;
+
   /// The [Quill] is a set of components or a preset of components
   /// that help this feather be more interactable.
   Quill quill;
@@ -158,6 +161,7 @@ class Feather {
           'FEATHER: A feather named "$name" already exists inside of this feather!');
       return feathers[name];
     }
+    feather.parent = this;
     feathers[name] = feather;
     return feather;
   }
