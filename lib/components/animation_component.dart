@@ -45,6 +45,11 @@ class AnimationComponent extends Component {
     }
   }
 
+  void setAnimations(Map<String, Animation> animations) {
+    this.animations = animations;
+    setAnimation(animations.keys.first);
+  }
+
   /// Add animations by name to our mapped list of animations.
   /// If the animations map is not yet allocated, create and allocate it.
   /// The first animation to be set, is automatically set to current animation.

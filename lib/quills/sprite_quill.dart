@@ -32,7 +32,13 @@ class SpriteQuill extends Quill {
   /// TODO:
   /// Initialize with a list of animation, setting
   /// the [0] index as current
-  void initWithAnimations(List<Animation> animations) {}
+  void initWithAnimations(Map<String, Animation> animations) {
+    if (!hasComponent<AnimationComponent>()) {
+      addComponent<AnimationComponent>(new AnimationComponent());
+    }
+    getComponent<AnimationComponent>()
+      ..setAnimations(animations);
+  }
 
   /// Set the position
   void setPosition(double x, double y) {

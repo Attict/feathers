@@ -19,11 +19,13 @@ class TextComponent extends Component {
 
   @override
   void init() {
-    final TextStyle style =
-        new TextStyle(color: const Color(0xFFFF0000), fontSize: 16.0);
-    final ParagraphConstraints constraints =
-        new ParagraphConstraints(width: 200.0);
-    format(style, constraints);
+    if (paragraph == null) {
+      final TextStyle style =
+          new TextStyle(color: const Color(0xFFF00000), fontSize: 16.0);
+      final ParagraphConstraints constraints =
+          new ParagraphConstraints(width: 200.0);
+      format(style, constraints);
+    }
   }
 
   @override
@@ -44,8 +46,9 @@ class TextComponent extends Component {
   @override
   void render(Context context) {
     PositionComponent position = quill.getComponent<PositionComponent>();
+
     context.canvas
-        .drawParagraph(this.paragraph, new Offset(position.x, position.y));
+      ..drawParagraph(this.paragraph, new Offset(position.x, position.y));
   }
 
   void format(TextStyle style, ParagraphConstraints constraints,
