@@ -1,3 +1,7 @@
+# DEPRECATED 
+
+Feathers has been discontinued.  Please see _https://github.com/Attict/Quill_
+
 # Feathers
 
 A lightweight game engine, that only uses feathers.
